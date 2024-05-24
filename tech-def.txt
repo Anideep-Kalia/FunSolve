@@ -1,0 +1,8 @@
+Morgan:
+
+sets up middleware in an Express.js application to log HTTP requests and responses
+Purpose
+> Debugging: It allows developers to see incoming requests and their details in real-time.
+> Monitoring: Developers can monitor the performance and status of requests.
+> Auditing: Logs can be useful for auditing purposes, understanding usage patterns, and identifying issues.
+----------------------------------------------------------
