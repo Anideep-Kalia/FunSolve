@@ -49,6 +49,7 @@ const userSchema = Schema(
   { timestamps: true }
 );
 
+// on call instance function i.e. defined at execution page
 userSchema.methods.generateAuthToken = async function () {
   const user = this;
   const token = sign({ _id: user.id.toString() }, process.env.TOKEN_SECRET, {
@@ -63,6 +64,7 @@ userSchema.methods.generateAuthToken = async function () {
 };
 
 //to find the user by email and password from the database and send it back
+// predefined function and not an instance
 userSchema.statics.findByCredentials = async function (email, password) {
   const user = await this.findOne({ email });
 
@@ -80,6 +82,7 @@ userSchema.statics.findByCredentials = async function (email, password) {
 };
 
 //to hash the plaintext password before saving
+//middleware exe when save is called before saving into db
 userSchema.pre('save', async function (next) {
   const user = this;
 
