@@ -1,8 +1,54 @@
 Morgan:
-
 sets up middleware in an Express.js application to log HTTP requests and responses
 Purpose
 > Debugging: It allows developers to see incoming requests and their details in real-time.
 > Monitoring: Developers can monitor the performance and status of requests.
 > Auditing: Logs can be useful for auditing purposes, understanding usage patterns, and identifying issues.
 ----------------------------------------------------------
+Passport.js:
+passport.session():
+Session Middleware: passport.session() is middleware that integrates Passport with the session middleware. It is necessary when using persistent login sessions (typically with cookies).
+Purpose: This middleware works in conjunction with the session middleware (like cookie-session) to support persistent login sessions. It serializes user information to store in the session and deserializes it to retrieve the user information from the session on subsequent requests.
+----------------------------------------------------------
+URLencoded: forms data and populates req.body with this data. The extended: false option uses the querystring library for parsing, suitable for simple key-value pairs. This setup is crucial for handling form submissions in web applications.
+
+front end: 
+<form action="/submit" method="post">
+  <input type="text" name="username" value="john">
+  <input type="text" name="email" value="john@example.com">
+  <button type="submit">Submit</button>
+</form>
+
+Backend:
+app.use(express.urlencoded({ extended: false }));
+app.post('/submit', (req, res) => {
+  console.log(req.body); // This will log: { username: 'john', email: 'john@example.com' }
+  res.send('Form data received');
+});
+----------------------------------------------------------
+Swagger UI
+Swagger UI is a tool that automatically generates interactive API documentation. It reads the API specifications and allows users to explore and test the API endpoints directly from a web interface.
+serve Middleware
+serve is a middleware function provided by swagger-ui-express that serves the static files required for the Swagger UI interface. It sets up the necessary routes to serve these files.
+setup Middleware
+setup is another middleware function provided by swagger-ui-express that configures Swagger UI with your API documentation.
+It takes the Swagger documentation object (swaggerJsDocs) and sets up the UI to display the API documentation based on this object
+----------------------------------------------------------
+A Redis adapter uses Redis as a message broker to share event information between different server instances.
+Redis is an in-memory data structure store that can act as a message broker, providing a publish/subscribe mechanism.
+Initialization:
+
+The Redis adapter is initialized with the given host and port configuration. This tells Socket.IO to use Redis for managing communication between multiple server instances.
+Communication:
+When a client emits an event, the event is sent to the server instance the client is connected to.
+If the server needs to broadcast this event to clients connected to other server instances, the Redis adapter publishes the event to the Redis server.
+Other server instances subscribed to this event channel receive the event and can then emit it to their connected clients.
+
+ a message sent from a client connected to Server A would only be received by other clients connected to Server A. Clients connected to Server B or Server C would not receive the message.
+With the Redis adapter, the flow works as follows:
+Client 1 (connected to Server A) sends a message.
+Server A receives the message and publishes it to the Redis server.
+The Redis server broadcasts the message to Server B and Server C.
+Server B and Server C emit the message to their connected clients.
+Clients connected to Server B and Server C receive the message.
+server means each ec2 machine on which our backend is running
