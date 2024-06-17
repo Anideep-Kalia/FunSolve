@@ -6,7 +6,7 @@ import {
   githubLogout,
   githubSignin,
   githubFailed,
-} from '../Controllers/githubAuthController.js';
+} from '../Controllers/githubAuthControllers.js';
 import { githubAuth } from '../Middleware/githubAuthMiddleware.js';
 const router = Router();
 

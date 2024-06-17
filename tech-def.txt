@@ -7,8 +7,7 @@ Purpose
 ----------------------------------------------------------
 Passport.js:
 passport.session():
-Session Middleware: passport.session() is middleware that integrates Passport with the session middleware. It is necessary when using persistent login sessions (typically with cookies).
-Purpose: This middleware works in conjunction with the session middleware (like cookie-session) to support persistent login sessions. It serializes user information to store in the session and deserializes it to retrieve the user information from the session on subsequent requests.
+Session Middleware: passport.session() is middleware. Passport allows features like login with GitHub or google
 ----------------------------------------------------------
 URLencoded: forms data and populates req.body with this data. The extended: false option uses the querystring library for parsing, suitable for simple key-value pairs. This setup is crucial for handling form submissions in web applications.
 
