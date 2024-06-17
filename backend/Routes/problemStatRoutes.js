@@ -1,13 +1,5 @@
 import { Router } from 'express';
-import auth from '../Middleware/auth.js';
-import {
-  listAllProblems,
-  problemByID,
-  addProblem,
-  updateProblem,
-  removeProblem,
-  deleteAllProblems,
-} from '../Controllers/problemStatController.js';
+import problemStatement from '../Model/problemStatements.js';
 
 const router = new Router();
 
