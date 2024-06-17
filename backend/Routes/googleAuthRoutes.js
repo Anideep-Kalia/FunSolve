@@ -1,10 +1,5 @@
 import { Router } from 'express';
 import {
-  googleLogout,
-  googleFailed,
-  googleSuccess,
-} from '../Controllers/googleAuthController.js';
-import {
   googleLogin,
   googleOauth,
   isGoogleLogged,
@@ -13,8 +8,22 @@ const router = Router();
 
 router.get('/google', googleLogin);
 router.get('/google/callback', googleOauth);
-router.get('/googleSuccess', isGoogleLogged, googleSuccess);
-router.get('/googleFailed', googleFailed);
-router.get('/googleLogout', googleLogout);
+
+router.get('/googleSuccess', isGoogleLogged, async (req, res) => {
+  res
+    .cookie('token', req.user.token)
+    .redirect('http://localhost:3000/landingPage');
+});
+
+router.get('/googleFailed', (req, res) => {
+  res.status(401).json({ message: 'Login Failed' });
+});
+
+router.get('/googleLogout', (req, res) => {
+  req.session = null;
+  req.logout();
+  res.clearCookie('token');
+  res.status(200).json({ message: 'Google logout success' });
+});
 
 export default router;
