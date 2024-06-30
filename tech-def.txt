@@ -51,3 +51,6 @@ The Redis server broadcasts the message to Server B and Server C.
 Server B and Server C emit the message to their connected clients.
 Clients connected to Server B and Server C receive the message.
 server means each ec2 machine on which our backend is running
+----------------------------------------------------------
+Node Piston: Piston is a high performance general purpose code execution engine. It excels at running untrusted and possibly malicious code without fear from any harmful effects
+Used in code sandbox
