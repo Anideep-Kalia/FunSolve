@@ -49,24 +49,24 @@ function App() {
               element={
                 <>
                   <div>
-                    <Link to="/signup">Signup page</Link>
+                    <Link to="signup">Signup page</Link>
                   </div>
                   <div>
-                    <Link to="/landingPage">Landing page</Link>
+                    <Link to="landingPage">Landing page</Link>
                   </div>
                   <div>
-                    <Link to="/codeEditor">Code Editor page</Link>
+                    <Link to="codeEditor">Code Editor page</Link>
                   </div>
                   <div>
-                    <Link to="/login">Login page</Link>
+                    <Link to="login">Login page</Link>
                   </div>
                   <div>
-                    <Link to="/leaderboard">Leaderboard</Link>
+                    <Link to="leaderboard">Leaderboard</Link>
                   </div>
                 </>
               }
             />
-            <Route path="signup" element={<SignupScreen />} />
+            <Route path="/signup" element={<SignupScreen />} />
             <Route
               path="landingPage"
               element={
@@ -77,18 +77,9 @@ function App() {
                 </>
               }
             />
-            <Route path="codeEditor" element={<TextEditor />} />
-            <Route path="login" element={<LoginScreen />} />
-            <Route path="leaderboard" element={<LeaderBoard />} />
-            {/* <Route
-              path="joinRoom"
-              element={
-                <>
-                  <SignupScreen />
-                  <JoinRoomModal />
-                </>
-              }
-            /> */}
+            <Route path="/codeEditor" element={<TextEditor />} />
+            <Route path="/login" element={<LoginScreen />} />
+            <Route path="/leaderboard" element={<LeaderBoard />} />
           </Routes>
         </BrowserRouter>
       </div>

@@ -301,7 +301,7 @@ function TextEditor() {
                   xs={7}
                   sx={{ marginTop: '1.5vh', fontSize: '1.4rem' }}
                 >
-                  Kush Maniar
+                  Test User
                 </Grid>
               </Grid>
             </Grid>

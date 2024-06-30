@@ -6,22 +6,22 @@ import Background from '../images/background.jpg';
 export default function LeaderBoard() {
   const Demo = [
     {
-      name: 'Kush Maniar',
+      name: 'Test User1',
       number: '2931',
       id: 1,
     },
     {
-      name: 'Sanika Ardekar',
+      name: 'Test User2',
       number: '567',
       id: 2,
     },
     {
-      name: 'Kartik J',
+      name: 'Test User3',
       number: '6768',
       id: 3,
     },
     {
-      name: 'Meet Patel',
+      name: 'Test User4',
       number: '4578',
       id: 4,
     },

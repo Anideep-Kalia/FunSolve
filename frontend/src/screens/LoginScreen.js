@@ -87,9 +87,9 @@ function LoginScreen() {
   console.log(errors);
   console.log(`touchedFields: ${touchedFields.username}`);
 
-  const onSubmit = (data) =>
+  const onSubmit = (data) =>{
     dispatch(login(getValues('email'), getValues('password')));
-
+}
   useEffect(() => {
     if (error) {
       setSnackBools({ ...snackBools, errorOpen: true });
