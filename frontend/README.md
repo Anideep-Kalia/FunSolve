@@ -28,14 +28,4 @@ Obstacles:
 + Code Sandbox [Node-Piston](https://github.com/dthree/node-piston)
 + Room Creation and joining with Socket.io
 
-Rough Timeline:
-   End by May 31st
-   1. 5th April: 
-       + Data loading for questions and testcase
-       + Schema
-       + Complete the code editor part
-       + Results page
-   2. 31st May:
-       + Rooms, Lobby, Timers
-       + Deployment
 
